@@ -6,9 +6,9 @@ export default function Navigation() {
       <header className="header_section">
         <div className="container-fluid">
           <nav className="navbar navbar-expand-lg custom_nav-container ">
-            <a className="navbar-brand" href="/">
+            <Link className="navbar-brand" to="/">
               <span>Neogym</span>
-            </a>
+            </Link>
             <button
               className="navbar-toggler"
               type="button"
@@ -27,15 +27,15 @@ export default function Navigation() {
               <div className="d-flex ml-auto flex-column flex-lg-row align-items-center">
                 <ul className="navbar-nav  ">
                   <li className="nav-item active">
-                    <a className="nav-link" href="/">
+                    <Link className="nav-link" to="/" exact>
                       Home <span className="sr-only">(current)</span>
-                    </a>
+                    </Link>
                   </li>
                   <li className="nav-item ">
-                    <a className="nav-link" href="/whyUs">
+                    <Link className="nav-link" to="/whyUs">
                       {" "}
                       Why us{" "}
-                    </a>
+                    </Link>
                   </li>
                   <li className="nav-item">
                     <Link className="nav-link" to="/trainers">
@@ -44,34 +44,34 @@ export default function Navigation() {
                     </Link>
                   </li>
                   <li className="nav-item ">
-                    <a className="nav-link" href="/addTrainer">
+                    <Link className="nav-link" to="/addTrainer">
                       {" "}
                       Add Trainer{" "}
-                    </a>
+                    </Link>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link" href="/contactUs">
+                    <Link className="nav-link" to="/contactUs">
                       {" "}
                       Contact Us
-                    </a>
+                    </Link>
                   </li>
                   <li className="nav-item ">
-                    <a className="nav-link" href="/login">
+                    <Link className="nav-link" to="/login">
                       {" "}
                       Login{" "}
-                    </a>
+                    </Link>
                   </li>
                   <li className="nav-item ">
-                    <a className="nav-link" href="/register">
+                    <Link className="nav-link" to="/register">
                       {" "}
                       Register{" "}
-                    </a>
+                    </Link>
                   </li>
                   <li className="nav-item ">
-                    <a className="nav-link" href="why.html">
+                    <Link className="nav-link" href="why.html">
                       {" "}
                       Logout{" "}
-                    </a>
+                    </Link>
                   </li>
                 </ul>
                 <div className="user_option">

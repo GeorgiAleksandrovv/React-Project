@@ -17,7 +17,6 @@ function App() {
     <>
       <Navigation />
       <Routes>
-        <Route path="/" element={<Header />} />
         <Route path="/trainers" element={<Trainers />} />
         <Route path="/whyUs" element={<WhyUs />} />
         <Route path="/contactUs" element={<ContactUs />} />

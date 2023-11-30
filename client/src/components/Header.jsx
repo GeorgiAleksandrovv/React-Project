@@ -1,12 +1,6 @@
-import { Link } from "react-router-dom";
-
 export default function Header() {
   return (
     <div className="hero_area">
-      {/* header section strats */}
-
-      {/* end header section */}
-      {/* slider section */}
       <section className=" slider_section position-relative">
         <div
           id="carouselExampleIndicators"
@@ -31,7 +25,7 @@ export default function Header() {
                         reprehenderit in voluptate velit esse .
                       </p>
                       <div className="">
-                        <a href="">Contact Us</a>
+                        <a href="">About Us</a>
                       </div>
                     </div>
                   </div>
@@ -79,7 +73,7 @@ export default function Header() {
                         reprehenderit in voluptate velit esse .
                       </p>
                       <div className="">
-                        <a href="">Contact Us</a>
+                        <a href="">Info</a>
                       </div>
                     </div>
                   </div>
@@ -148,7 +142,6 @@ export default function Header() {
           </ol>
         </div>
       </section>
-      {/* end slider section */}
     </div>
   );
 }

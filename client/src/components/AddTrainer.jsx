@@ -15,23 +15,45 @@ export default function AddTrainer() {
               </div>
               <form action="">
                 <div>
-                  <input type="text" placeholder="Name" />
+                  <input type="text" id="name" name="name" placeholder="Name" />
                 </div>
                 <div>
-                  <input type="text" placeholder="Height" />
+                  <input
+                    type="number"
+                    id="height"
+                    name="height"
+                    placeholder="Height"
+                  />
                 </div>
                 <div>
-                  <input type="text" placeholder="Weight" />
-                </div>
-                <div>
-                  <input type="text" placeholder="Phone Number" />
-                </div>
-                <div>
-                  <input type="imageUrl" placeholder="Insert image" />
+                  <input
+                    type="number"
+                    id="weight"
+                    name="weight"
+                    placeholder="Weight"
+                  />
                 </div>
                 <div>
                   <input
                     type="text"
+                    id="Phone"
+                    name="Phone"
+                    placeholder="Phone Number"
+                  />
+                </div>
+                <div>
+                  <input
+                    type="text"
+                    id="ImageUrl"
+                    name="ImageUrl"
+                    placeholder="Insert image"
+                  />
+                </div>
+                <div>
+                  <input
+                    type="text"
+                    id="message"
+                    name="message"
                     className="message-box"
                     placeholder="Motivation Speak"
                   />
