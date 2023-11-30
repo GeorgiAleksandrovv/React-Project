@@ -10,6 +10,7 @@ import WhyUs from "./components/WhyUs";
 import Navigation from "./components/Navigation";
 import Login from "./components/Login";
 import Register from "./components/Register";
+import AddTrainer from "./components/AddTrainer";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/contactUs" element={<ContactUs />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/addTrainer" element={<AddTrainer />} />
       </Routes>
       <Healthy />
       <Info />

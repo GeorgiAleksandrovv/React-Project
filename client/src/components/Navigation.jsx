@@ -44,7 +44,7 @@ export default function Navigation() {
                     </Link>
                   </li>
                   <li className="nav-item ">
-                    <a className="nav-link" href="why.html">
+                    <a className="nav-link" href="/addTrainer">
                       {" "}
                       Add Trainer{" "}
                     </a>
