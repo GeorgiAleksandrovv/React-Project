@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Header() {
   return (
     <div className="hero_area">
@@ -26,21 +28,21 @@ export default function Header() {
               <div className="d-flex ml-auto flex-column flex-lg-row align-items-center">
                 <ul className="navbar-nav  ">
                   <li className="nav-item active">
-                    <a className="nav-link" href="index.html">
+                    <a className="nav-link" href="/">
                       Home <span className="sr-only">(current)</span>
                     </a>
                   </li>
                   <li className="nav-item ">
-                    <a className="nav-link" href="why.html">
+                    <a className="nav-link" href="/whyUs">
                       {" "}
                       Why us{" "}
                     </a>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link" href="trainer.html">
+                    <Link className="nav-link" to="/trainers">
                       {" "}
                       trainers
-                    </a>
+                    </Link>
                   </li>
                   <li className="nav-item ">
                     <a className="nav-link" href="why.html">
@@ -49,7 +51,7 @@ export default function Header() {
                     </a>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link" href="contact.html">
+                    <a className="nav-link" href="/contactUs">
                       {" "}
                       Contact Us
                     </a>
