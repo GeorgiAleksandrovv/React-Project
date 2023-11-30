@@ -27,6 +27,9 @@ export default function AddTrainer() {
                   <input type="text" placeholder="Phone Number" />
                 </div>
                 <div>
+                  <input type="imageUrl" placeholder="Insert image" />
+                </div>
+                <div>
                   <input
                     type="text"
                     className="message-box"

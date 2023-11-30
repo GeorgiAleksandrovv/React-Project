@@ -14,16 +14,10 @@ export default function Trainers() {
               <div className="img-box">
                 <img src="images/t1.jpg" alt="" />
               </div>
-              <div className="social_box">
-                <a href="">
-                  <img src="images/facebook-logo.png" alt="" />
-                </a>
-                <a href="">
-                  <img src="images/twitter.png" alt="" />
-                </a>
-                <a href="">
-                  <img src="images/instagram-logo.png" alt="" />
-                </a>
+              <div className="text">
+                <div className="d-flex ">
+                  <button>Details</button>
+                </div>
               </div>
             </div>
           </div>
@@ -35,16 +29,10 @@ export default function Trainers() {
               <div className="img-box">
                 <img src="images/t2.jpg" alt="" />
               </div>
-              <div className="social_box">
-                <a href="">
-                  <img src="images/facebook-logo.png" alt="" />
-                </a>
-                <a href="">
-                  <img src="images/twitter.png" alt="" />
-                </a>
-                <a href="">
-                  <img src="images/instagram-logo.png" alt="" />
-                </a>
+              <div className="text">
+                <div className="d-flex ">
+                  <button>Details</button>
+                </div>
               </div>
             </div>
           </div>
@@ -56,16 +44,10 @@ export default function Trainers() {
               <div className="img-box">
                 <img src="images/t3.jpg" alt="" />
               </div>
-              <div className="social_box">
-                <a href="">
-                  <img src="images/facebook-logo.png" alt="" />
-                </a>
-                <a href="">
-                  <img src="images/twitter.png" alt="" />
-                </a>
-                <a href="">
-                  <img src="images/instagram-logo.png" alt="" />
-                </a>
+              <div className="text">
+                <div className="d-flex ">
+                  <button>Details</button>
+                </div>
               </div>
             </div>
           </div>
