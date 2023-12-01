@@ -13,3 +13,9 @@ export const create = async (trainerData) => {
 
   return result;
 };
+
+export const getOne = async (trainerId) => {
+  const result = await request.get(`${baseUrl}/${trainerId}`);
+
+  return result;
+};
