@@ -1,4 +1,14 @@
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+
 export default function Info() {
+  const navigate = useNavigate();
+  const [isClicked, setIsClicked] = useState(false);
+  const handleSendClick = () => {
+    setIsClicked(true);
+    navigate("/contactUs");
+  };
+
   return (
     <section className="info_section layout_padding2">
       <div className="container">
@@ -9,27 +19,27 @@ export default function Info() {
                 <img src="" alt="" />
               </div>
               <div className="detail-box">
-                <p>Location</p>
+                <p>Sofia</p>
               </div>
             </div>
           </a>
           <a href="">
             <div className="item ">
-              <div className="img-box box-2">
+              <div onClick={handleSendClick} className="img-box box-2">
                 <img src="" alt="" />
               </div>
               <div className="detail-box">
-                <p>+02 1234567890</p>
+                <p>+359 897777777</p>
               </div>
             </div>
           </a>
           <a href="">
             <div className="item ">
-              <div className="img-box box-3">
+              <div onClick={handleSendClick} className="img-box box-3">
                 <img src="" alt="" />
               </div>
               <div className="detail-box">
-                <p>demo@gmail.com</p>
+                <p>NeoGym@gmail.com</p>
               </div>
             </div>
           </a>
