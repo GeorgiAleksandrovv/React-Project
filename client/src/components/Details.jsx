@@ -52,13 +52,17 @@ export default function Details() {
           <div className="text">
             <div className="d-flex "></div>
           </div>
-          <Link to={`/trainers/:trainerId/edit`} className="button">
-            Edit
-          </Link>
-          <button className="button" onClick={deleteButtonClickHandler}>
-            {" "}
-            Delete
-          </button>
+          {userId === trainer._ownerId && (
+            <div className="buttons">
+              <Link to={`/trainers/:trainerId/edit`} className="button">
+                Edit
+              </Link>
+              <button className="button" onClick={deleteButtonClickHandler}>
+                {" "}
+                Delete
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </div>
