@@ -11,7 +11,22 @@ import {
   MDBInput,
 } from "mdb-react-ui-kit";
 
+import { useContext } from "react";
+import useForm from "../hooks/useForm";
+import AuthContext from "../contexts/authContext";
+
+const LoginFormKyes = {
+  Email: "email",
+  Password: "password",
+};
+
 export default function Login() {
+  const { loginSubmitHandler } = useContext(AuthContext);
+  const { values, onChange, onSubmit } = useForm(loginSubmitHandler, {
+    [LoginFormKyes.Email]: "",
+    [LoginFormKyes.Password]: "",
+  });
+
   return (
     <MDBContainer className="my-5">
       <MDBCard>
@@ -26,56 +41,64 @@ export default function Login() {
 
           <MDBCol md="6">
             <MDBCardBody className="d-flex flex-column">
-              <div className="d-flex flex-row mt-2">
-                <MDBIcon
-                  fas
-                  icon="cubes fa-3x me-3"
-                  style={{ color: "#ff6219" }}
+              <form id="login" onSubmit={onSubmit}>
+                <div className="d-flex flex-row mt-2">
+                  <MDBIcon
+                    fas
+                    icon="cubes fa-3x me-3"
+                    style={{ color: "#ff6219" }}
+                  />
+                  <span className="h1 fw-bold mb-0">Login</span>
+                </div>
+
+                <h5
+                  className="fw-normal my-4 pb-3"
+                  style={{ letterSpacing: "1px" }}
+                >
+                  Sign into your account
+                </h5>
+
+                <MDBInput
+                  wrapperClass="mb-4"
+                  label="Email address"
+                  name="email"
+                  id="email"
+                  type="email"
+                  size="lg"
+                  onChange={onChange}
+                  value={values[LoginFormKyes.Email]}
                 />
-                <span className="h1 fw-bold mb-0">Login</span>
-              </div>
+                <MDBInput
+                  wrapperClass="mb-4"
+                  label="Password"
+                  name="password"
+                  id="password"
+                  type="password"
+                  size="lg"
+                  onChange={onChange}
+                  value={values[LoginFormKyes.Password]}
+                />
 
-              <h5
-                className="fw-normal my-4 pb-3"
-                style={{ letterSpacing: "1px" }}
-              >
-                Sign into your account
-              </h5>
+                <MDBBtn className="mb-4 px-5" color="dark" size="lg">
+                  Login
+                </MDBBtn>
 
-              <MDBInput
-                wrapperClass="mb-4"
-                label="Email address"
-                id="email"
-                type="email"
-                size="lg"
-              />
-              <MDBInput
-                wrapperClass="mb-4"
-                label="Password"
-                id="formControlLg"
-                type="password"
-                size="lg"
-              />
+                <p className="mb-5 pb-lg-2" style={{ color: "#393f81" }}>
+                  Don't have an account?{" "}
+                  <a href="/register" style={{ color: "#393f81" }}>
+                    Register here
+                  </a>
+                </p>
 
-              <MDBBtn className="mb-4 px-5" color="dark" size="lg">
-                Login
-              </MDBBtn>
-
-              <p className="mb-5 pb-lg-2" style={{ color: "#393f81" }}>
-                Don't have an account?{" "}
-                <a href="/register" style={{ color: "#393f81" }}>
-                  Register here
-                </a>
-              </p>
-
-              <div className="d-flex flex-row justify-content-start">
-                <a href="#!" className="small text-muted me-1">
-                  Terms of use.
-                </a>
-                <a href="#!" className="small text-muted">
-                  Privacy policy
-                </a>
-              </div>
+                <div className="d-flex flex-row justify-content-start">
+                  <a href="#!" className="small text-muted me-1">
+                    Terms of use.
+                  </a>
+                  <a href="#!" className="small text-muted">
+                    Privacy policy
+                  </a>
+                </div>
+              </form>
             </MDBCardBody>
           </MDBCol>
         </MDBRow>
