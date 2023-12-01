@@ -15,6 +15,18 @@ export default function Details() {
     trainerService.getOne(trainerId).then(setTrainer);
   }, [trainerId]);
 
+  const deleteButtonClickHandler = async () => {
+    const hasConfirmed = confirm(
+      `Are you sure you want to delete ${trainer.title}`
+    );
+
+    if (hasConfirmed) {
+      await trainerService.remove(trainerId);
+
+      navigate("/trainers");
+    }
+  };
+
   return (
     <div className="row">
       <div className="col-lg-4 col-md-6 mx-auto">
@@ -40,10 +52,13 @@ export default function Details() {
           <div className="text">
             <div className="d-flex "></div>
           </div>
-          <Link to={`/`} className="button">
+          <Link to={`/trainers/:trainerId/edit`} className="button">
             Edit
           </Link>
-          <button className="button"> Delete</button>
+          <button className="button" onClick={deleteButtonClickHandler}>
+            {" "}
+            Delete
+          </button>
         </div>
       </div>
     </div>

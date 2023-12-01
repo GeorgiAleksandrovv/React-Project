@@ -13,6 +13,7 @@ import Register from "./components/Register";
 import AddTrainer from "./components/AddTrainer";
 import { AuthProvider } from "./contexts/authContext";
 import Details from "./components/Details";
+import TrainerUpdate from "./components/trainerUpdate";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/addTrainer" element={<AddTrainer />} />
           <Route path="/trainers/:trainerId" element={<Details />} />
+          <Route path="/trainers/:trainerId/edit" element={<TrainerUpdate />} />
         </Routes>
         <Healthy />
         <Info />
