@@ -68,7 +68,7 @@ export default function Navigation() {
                     </Link>
                   </li>
                   <li className="nav-item ">
-                    <Link className="nav-link" href="why.html">
+                    <Link className="nav-link" to="/logout">
                       {" "}
                       Logout{" "}
                     </Link>

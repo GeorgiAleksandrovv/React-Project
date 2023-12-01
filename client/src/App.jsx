@@ -14,6 +14,7 @@ import AddTrainer from "./components/AddTrainer";
 import { AuthProvider } from "./contexts/authContext";
 import Details from "./components/Details";
 import TrainerUpdate from "./components/trainerUpdate";
+import Logout from "./components/logout";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
           <Route path="/addTrainer" element={<AddTrainer />} />
           <Route path="/trainers/:trainerId" element={<Details />} />
           <Route path="/trainers/:trainerId/edit" element={<TrainerUpdate />} />
+          <Route path="/logout" element={<Logout />} />
         </Routes>
         <Healthy />
         <Info />

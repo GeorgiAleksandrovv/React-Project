@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 import * as trainerService from "../services/trainerService";
 
@@ -65,7 +65,7 @@ export default function TrainerUpdate() {
                     id="name"
                     name="name"
                     value={trainer.name}
-                    nChange={onChange}
+                    onChange={onChange}
                     placeholder="Name"
                   />
                 </div>
@@ -75,7 +75,7 @@ export default function TrainerUpdate() {
                     id="height"
                     name="height"
                     value={trainer.height}
-                    nChange={onChange}
+                    onChange={onChange}
                     placeholder="Height"
                   />
                 </div>
@@ -85,7 +85,7 @@ export default function TrainerUpdate() {
                     id="weight"
                     name="weight"
                     value={trainer.weight}
-                    nChange={onChange}
+                    onChange={onChange}
                     placeholder="Weight"
                   />
                 </div>
@@ -95,7 +95,7 @@ export default function TrainerUpdate() {
                     id="Phone"
                     name="Phone"
                     value={trainer.Phone}
-                    nChange={onChange}
+                    onChange={onChange}
                     placeholder="Phone Number"
                   />
                 </div>
@@ -105,7 +105,7 @@ export default function TrainerUpdate() {
                     id="ImageUrl"
                     name="ImageUrl"
                     value={trainer.ImageUrl}
-                    nChange={onChange}
+                    onChange={onChange}
                     placeholder="Insert image"
                   />
                 </div>
@@ -115,13 +115,19 @@ export default function TrainerUpdate() {
                     id="message"
                     name="message"
                     value={trainer.message}
-                    nChange={onChange}
+                    onChange={onChange}
                     className="message-box"
                     placeholder="Motivation Speak"
                   />
                 </div>
                 <div className="d-flex ">
-                  <button>Edit</button>
+                  <button
+                    classname="btn submit"
+                    type="submit"
+                    value="editTrainer"
+                  >
+                    Edit
+                  </button>
                 </div>
               </form>
             </div>
