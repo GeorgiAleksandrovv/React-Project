@@ -19,3 +19,12 @@ export const getOne = async (trainerId) => {
 
   return result;
 };
+
+export const edit = async (trainerId, trainerData) => {
+  const result = await request.put(`${baseUrl}/${trainerId}`, trainerData);
+
+  return result;
+};
+
+export const remove = async (trainerId) =>
+  request.remove(`${baseUrl}/${trainerId}`);

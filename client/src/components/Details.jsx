@@ -33,13 +33,17 @@ export default function Details() {
           </div>
           <div className="img-box">
             <img src={trainer.ImageUrl} alt="" />
-          </div>
-          <div className="number">
-            <h5>{trainer.Phone}</h5>
+            <div className="number">
+              <h5>{trainer.Phone}</h5>
+            </div>
           </div>
           <div className="text">
             <div className="d-flex "></div>
           </div>
+          <Link to={`/`} className="button">
+            Edit
+          </Link>
+          <button className="button"> Delete</button>
         </div>
       </div>
     </div>
