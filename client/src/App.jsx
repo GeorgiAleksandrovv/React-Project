@@ -16,10 +16,11 @@ import Details from "./components/Details";
 import TrainerUpdate from "./components/trainerUpdate";
 import Logout from "./components/logout";
 import AuthGuard from "./components/AuthGuard";
+import ErrorBoundary from "./components/ErrorBoundary";
 
 function App() {
   return (
-    <>
+    <ErrorBoundary>
       <AuthProvider>
         <Navigation />
         <Routes>
@@ -43,7 +44,7 @@ function App() {
         <Info />
         <Footer />
       </AuthProvider>
-    </>
+    </ErrorBoundary>
   );
 }
 

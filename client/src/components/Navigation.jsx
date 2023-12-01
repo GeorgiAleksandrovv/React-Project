@@ -97,6 +97,7 @@ export default function Navigation() {
                     />
                   </form>
                 </div>
+                {username}
               </div>
             </div>
           </nav>
