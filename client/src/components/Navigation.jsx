@@ -1,6 +1,11 @@
 import { Link } from "react-router-dom";
 
+import { useContext } from "react";
+import AuthContext from "../contexts/authContext";
+
 export default function Navigation() {
+  const { isAuthenticated, username } = useContext(AuthContext);
+
   return (
     <div className="hero_area">
       <header className="header_section">
@@ -43,36 +48,46 @@ export default function Navigation() {
                       trainers
                     </Link>
                   </li>
-                  <li className="nav-item ">
-                    <Link className="nav-link" to="/addTrainer">
-                      {" "}
-                      Add Trainer{" "}
-                    </Link>
-                  </li>
+                  {isAuthenticated && (
+                    <li className="nav-item ">
+                      <Link className="nav-link" to="/addTrainer">
+                        {" "}
+                        Add Trainer{" "}
+                      </Link>
+                    </li>
+                  )}
+
                   <li className="nav-item">
                     <Link className="nav-link" to="/contactUs">
                       {" "}
                       Contact Us
                     </Link>
                   </li>
-                  <li className="nav-item ">
-                    <Link className="nav-link" to="/login">
-                      {" "}
-                      Login{" "}
-                    </Link>
-                  </li>
-                  <li className="nav-item ">
-                    <Link className="nav-link" to="/register">
-                      {" "}
-                      Register{" "}
-                    </Link>
-                  </li>
-                  <li className="nav-item ">
-                    <Link className="nav-link" to="/logout">
-                      {" "}
-                      Logout{" "}
-                    </Link>
-                  </li>
+                  {!isAuthenticated && (
+                    <li className="nav-item ">
+                      <Link className="nav-link" to="/login">
+                        {" "}
+                        Login{" "}
+                      </Link>
+                    </li>
+                  )}
+
+                  {!isAuthenticated && (
+                    <li className="nav-item ">
+                      <Link className="nav-link" to="/register">
+                        {" "}
+                        Register{" "}
+                      </Link>
+                    </li>
+                  )}
+                  {isAuthenticated && (
+                    <li className="nav-item ">
+                      <Link className="nav-link" to="/logout">
+                        {" "}
+                        Logout{" "}
+                      </Link>
+                    </li>
+                  )}
                 </ul>
                 <div className="user_option">
                   <form className="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">
