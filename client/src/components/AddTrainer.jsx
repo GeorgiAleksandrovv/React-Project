@@ -1,4 +1,25 @@
+import { useNavigate } from "react-router-dom";
+
+import * as trainerService from "../services/trainerService";
+
 export default function AddTrainer() {
+  const navigate = useNavigate();
+
+  const createTrainerSubmitHandler = async (e) => {
+    e.preventDefault();
+
+    const trainerData = Object.fromEntries(new FormData(e.currentTarget));
+
+    try {
+      await trainerService.create(trainerData);
+
+      navigate("/trainers");
+    } catch (err) {
+      // Error notification
+      console.log(err);
+    }
+  };
+
   return (
     <section className="contact_section ">
       <div className="container-fluid">
@@ -13,7 +34,7 @@ export default function AddTrainer() {
               <div className="heading_container">
                 <h2>Add Trainer</h2>
               </div>
-              <form action="">
+              <form id="create" onSubmit={createTrainerSubmitHandler}>
                 <div>
                   <input type="text" id="name" name="name" placeholder="Name" />
                 </div>

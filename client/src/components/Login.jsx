@@ -32,7 +32,7 @@ export default function Login() {
                   icon="cubes fa-3x me-3"
                   style={{ color: "#ff6219" }}
                 />
-                <span className="h1 fw-bold mb-0">Logo</span>
+                <span className="h1 fw-bold mb-0">Login</span>
               </div>
 
               <h5
@@ -45,7 +45,7 @@ export default function Login() {
               <MDBInput
                 wrapperClass="mb-4"
                 label="Email address"
-                id="formControlLg"
+                id="email"
                 type="email"
                 size="lg"
               />
@@ -63,7 +63,7 @@ export default function Login() {
 
               <p className="mb-5 pb-lg-2" style={{ color: "#393f81" }}>
                 Don't have an account?{" "}
-                <a href="#!" style={{ color: "#393f81" }}>
+                <a href="/register" style={{ color: "#393f81" }}>
                   Register here
                 </a>
               </p>
