@@ -11,23 +11,26 @@ import Navigation from "./components/Navigation";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import AddTrainer from "./components/AddTrainer";
+import { AuthProvider } from "./contexts/authContext";
 
 function App() {
   return (
     <>
-      <Navigation />
-      <Routes>
-        <Route path="/" element={<Header />} />
-        <Route path="/trainers" element={<Trainers />} />
-        <Route path="/whyUs" element={<WhyUs />} />
-        <Route path="/contactUs" element={<ContactUs />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/addTrainer" element={<AddTrainer />} />
-      </Routes>
-      <Healthy />
-      <Info />
-      <Footer />
+      <AuthProvider>
+        <Navigation />
+        <Routes>
+          <Route path="/" element={<Header />} />
+          <Route path="/trainers" element={<Trainers />} />
+          <Route path="/whyUs" element={<WhyUs />} />
+          <Route path="/contactUs" element={<ContactUs />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/addTrainer" element={<AddTrainer />} />
+        </Routes>
+        <Healthy />
+        <Info />
+        <Footer />
+      </AuthProvider>
     </>
   );
 }

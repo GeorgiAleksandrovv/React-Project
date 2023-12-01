@@ -5,9 +5,29 @@ import {
   MDBCard,
   MDBCardBody,
   MDBInput,
-  MDBCheckbox,
 } from "mdb-react-ui-kit";
+
+import { useContext } from "react";
+
+import AuthContext from "../contexts/authContext";
+import useForm from "../hooks/useForm";
+
+const RegisterFormKeys = {
+  Email: "email",
+  Password: "password",
+  ConfirmPassword: "confirm-password",
+  Username: "username",
+};
+
 export default function Register() {
+  const { registerSubmitHandler } = useContext(AuthContext);
+  const { values, onChange, onSubmit } = useForm(registerSubmitHandler, {
+    [RegisterFormKeys.Email]: "",
+    [RegisterFormKeys.Password]: "",
+    [RegisterFormKeys.ConfirmPassword]: "",
+    [RegisterFormKeys.Username]: "",
+  });
+
   return (
     <MDBContainer
       fluid
@@ -20,39 +40,59 @@ export default function Register() {
       <div className="mask gradient-custom-3"></div>
       <MDBCard className="m-5" style={{ maxWidth: "600px" }}>
         <MDBCardBody className="px-5">
-          <h2 className="text-uppercase text-center mb-5">Create an account</h2>
-          <MDBInput
-            wrapperClass="mb-4"
-            label="Your Name"
-            size="lg"
-            id="form1"
-            type="text"
-          />
-          <MDBInput
-            wrapperClass="mb-4"
-            label="Your Email"
-            size="lg"
-            id="form2"
-            type="email"
-          />
-          <MDBInput
-            wrapperClass="mb-4"
-            label="Password"
-            size="lg"
-            id="form3"
-            type="password"
-          />
-          <MDBInput
-            wrapperClass="mb-4"
-            label="Repeat your password"
-            size="lg"
-            id="form4"
-            type="password"
-          />
+          <form id="register" onSubmit={onSubmit}>
+            <h2 className="text-uppercase text-center mb-5">
+              Create an account
+            </h2>
+            <MDBInput
+              wrapperClass="mb-4"
+              label="Your Name"
+              size="lg"
+              name="username"
+              id="username"
+              type="text"
+              onChange={onChange}
+              values={values[RegisterFormKeys.Username]}
+            />
+            <MDBInput
+              wrapperClass="mb-4"
+              label="Your Email"
+              size="lg"
+              name="email"
+              id="email"
+              type="email"
+              onChange={onChange}
+              values={values[RegisterFormKeys.Email]}
+            />
+            <MDBInput
+              wrapperClass="mb-4"
+              label="Password"
+              size="lg"
+              name="password"
+              id="password"
+              type="password"
+              onChange={onChange}
+              values={values[RegisterFormKeys.Password]}
+            />
+            <MDBInput
+              wrapperClass="mb-4"
+              label="Repeat your password"
+              size="lg"
+              name="confirm-password"
+              id="confirm-password"
+              type="password"
+              onChange={onChange}
+              values={values[RegisterFormKeys.ConfirmPassword]}
+            />
 
-          <MDBBtn className="mb-4 w-100 gradient-custom-4" size="lg">
-            Register
-          </MDBBtn>
+            <MDBBtn
+              className="mb-4 w-100 gradient-custom-4"
+              size="lg"
+              type="submit"
+            >
+              Register
+            </MDBBtn>
+          </form>
         </MDBCardBody>
       </MDBCard>
     </MDBContainer>
