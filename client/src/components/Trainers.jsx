@@ -25,6 +25,10 @@ export default function Trainers() {
           <TrainerListItem key={trainer._id} {...trainer} />
         ))}
       </div>
+
+      {trainers.length === 0 && (
+        <h3 className="no-articles">No Trainers yet</h3>
+      )}
     </section>
   );
 }
