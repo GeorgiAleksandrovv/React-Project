@@ -1,4 +1,17 @@
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+
 export default function ContactUs() {
+  const navigate = useNavigate();
+  const [isMessageSent, setIsMessageSent] = useState(false);
+
+  const handleSendClick = () => {
+    setIsMessageSent(true);
+    setTimeout(() => {
+      navigate("/");
+    }, 3000);
+  };
+
   return (
     <section className="contact_section ">
       <div className="container-fluid">
@@ -31,8 +44,15 @@ export default function ContactUs() {
                   />
                 </div>
                 <div className="d-flex ">
-                  <button>Send</button>
+                  <button type="button" onClick={handleSendClick}>
+                    Send
+                  </button>
                 </div>
+                {isMessageSent && (
+                  <div className="confirmation-message">
+                    Message sent successfully!
+                  </div>
+                )}
               </form>
             </div>
           </div>
