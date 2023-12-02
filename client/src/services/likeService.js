@@ -8,6 +8,6 @@ export const getTrainerLikes = (trainerId) => {
   const query = encodeURIComponent(`trainerId="${trainerId}"`);
 
   return request
-    .get(`${baseUrl}/likes?select=userId&where=${query}`)
-    .then((res) => res.map((x) => x.userId));
+    .get(`${baseUrl}/likes?select=_ownerId&where=${query}`)
+    .then((res) => res.map((x) => x._ownerId));
 };

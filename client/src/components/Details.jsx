@@ -85,11 +85,11 @@ export default function Details() {
             </div>
           )}
 
-          {email._id &&
-            (email._id !== trainer._ownerId ? (
+          {userId &&
+            (userId !== trainer._ownerId ? (
               <button
                 onClick={likeButtonClick}
-                disabled={trainer.likes?.includes(email._id)}
+                disabled={trainer.likes?.includes(userId)}
               >
                 Like
               </button>
