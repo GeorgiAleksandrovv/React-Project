@@ -15,8 +15,7 @@ export default function AddTrainer() {
 
       navigate("/trainers");
     } catch (err) {
-      // Error notification
-      console.log(err);
+      alert("Error");
     }
   };
 

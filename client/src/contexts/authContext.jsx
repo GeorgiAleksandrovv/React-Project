@@ -11,13 +11,17 @@ export const AuthProvider = ({ children }) => {
   const [auth, setAuth] = usePersistedState("auth", {});
 
   const loginSubmitHandler = async (values) => {
-    const result = await authService.login(values.email, values.password);
+    try {
+      const result = await authService.login(values.email, values.password);
 
-    setAuth(result);
+      setAuth(result);
 
-    localStorage.setItem("accessToken", result.accessToken);
+      localStorage.setItem("accessToken", result.accessToken);
 
-    navigate("/");
+      navigate("/");
+    } catch (error) {
+      throw new Error("Invalid email or password");
+    }
   };
 
   const registerSubmitHandler = async (values) => {

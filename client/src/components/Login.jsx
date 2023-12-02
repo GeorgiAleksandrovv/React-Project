@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import {
   MDBBtn,
   MDBContainer,
@@ -22,10 +23,20 @@ const LoginFormKyes = {
 
 export default function Login() {
   const { loginSubmitHandler } = useContext(AuthContext);
-  const { values, onChange, onSubmit } = useForm(loginSubmitHandler, {
+  const [errorMessage, setErrorMessage] = useState("");
+  const { values, onChange, onSubmit } = useForm(handleSubmit, {
     [LoginFormKyes.Email]: "",
     [LoginFormKyes.Password]: "",
   });
+
+  async function handleSubmit() {
+    try {
+      setErrorMessage("");
+      await loginSubmitHandler(values);
+    } catch (error) {
+      setErrorMessage(error.message);
+    }
+  }
 
   return (
     <MDBContainer className="my-5">
@@ -82,7 +93,9 @@ export default function Login() {
                 <MDBBtn className="mb-4 px-5" color="dark" size="lg">
                   Login
                 </MDBBtn>
-
+                {errorMessage && (
+                  <p className="text-danger mb-3">{errorMessage}</p>
+                )}
                 <p className="mb-5 pb-lg-2" style={{ color: "#393f81" }}>
                   Don't have an account?{" "}
                   <a href="/register" style={{ color: "#393f81" }}>
