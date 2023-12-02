@@ -4,6 +4,7 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import * as trainerService from "../services/trainerService";
 import AuthContext from "../contexts/authContext";
 import useForm from "../hooks/useForm";
+import * as likeService from "../services/likeService";
 
 export default function Details() {
   const navigate = useNavigate();
@@ -14,6 +15,26 @@ export default function Details() {
   useEffect(() => {
     trainerService.getOne(trainerId).then(setTrainer);
   }, [trainerId]);
+
+  useEffect(() => {
+    likeService.getTrainerLikes(trainerId).then((likes) => {
+      setTrainer((state) => ({ ...state, likes }));
+    });
+  }, []);
+
+  const likeButtonClick = () => {
+    if (email._id === trainer._ownerId) {
+      return;
+    }
+
+    if (trainer.likes.includes(email._id)) {
+      return;
+    }
+
+    likeService.like(email._id, trainerId).then(() => {
+      setTrainer((state) => ({ ...state, likes: [...state.likes, email._id] }));
+    });
+  };
 
   const deleteButtonClickHandler = async () => {
     const hasConfirmed = confirm(
@@ -63,6 +84,21 @@ export default function Details() {
               </button>
             </div>
           )}
+          <button>
+            {email._id &&
+              (email._id !== trainer._ownerId ? (
+                <button
+                  onClick={likeButtonClick}
+                  disabled={trainer.likes?.includes(email._id)}
+                >
+                  Like
+                </button>
+              ) : null)}
+          </button>
+          <div className="likes">
+            <img className="hearts" />
+            <span id="total-likes">Likes: {trainer.likes?.length || 0}</span>
+          </div>
         </div>
       </div>
     </div>
