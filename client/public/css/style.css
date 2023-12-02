@@ -155,6 +155,11 @@ a:focus {
   margin: 10px 30px;
 }
 
+.nav_search-btn {
+  background-position: center;
+  margin-top: 10px;
+}
+
 .custom_nav-container .nav_search-btn {
   background-image: url(../images/search-icon.png);
   background-size: 22px;

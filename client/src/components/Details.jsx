@@ -38,7 +38,7 @@ export default function Details() {
 
   const deleteButtonClickHandler = async () => {
     const hasConfirmed = confirm(
-      `Are you sure you want to delete ${trainer.title}`
+      `Are you sure you want to delete ${trainer.name}`
     );
 
     if (hasConfirmed) {
@@ -50,40 +50,81 @@ export default function Details() {
 
   return (
     <section className="trainer_section layout_padding">
-      <div className="row">
+      <div className="row" style={{textAlign: 'center'}}>
+      
+      
+      <div className="col-lg-12 col-md-12 mx-auto">
+        <div className="name">
+          Name:
+          <h5>{trainer.name}</h5>
+        </div>
+      </div>
+
+
+
+        <div className="col-lg-5 col-md-5 mx-auto">
+        </div>
+        <div className="col-lg-1 col-md-1 mx-auto">
+          <div className="height">
+            Height:
+            <h5>{trainer.height}</h5>
+          </div>
+        </div>
+        <div className="col-lg-1 col-md-1 mx-auto">
+          <div className="weight">
+            Weight:
+            <h5>{trainer.weight}</h5>
+          </div>
+        </div>
+        <div className="col-lg-5 col-md-5 mx-auto">
+        </div>
+
+        <div className="col-lg-4 col-md-4 mx-auto">
+        </div>
+        <div className="col-lg-4 col-md-4 mx-auto">
+        <img src={trainer.ImageUrl} style={{maxWidth: '100%'}} alt="" />
+
+        </div>
+        <div className="col-lg-2 col-md-2 mx-auto">
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+        <h2>Biography</h2>
+        <h5>{trainer.message}</h5>
+
+        </div>
+        
+        <div className="col-lg-2 col-md-2 mx-auto">
+        </div>
+      
+
+
         <div className="col-lg-4 col-md-6 mx-auto">
           <div className="box">
-            <div className="name">
-              Name:
-              <h5>{trainer.name}</h5>
-            </div>
-            <div className="number">
-              Height:
-              <h5>{trainer.height}</h5>
-            </div>
-            <div className="number">
-              Weight:
-              <h5>{trainer.weight}</h5>
-            </div>
             <div className="img-box">
-              <img src={trainer.ImageUrl} alt="" />
               <div className="number">
-                <h5>{trainer.Phone}</h5>
+              <h5>Phone number: {trainer.Phone}</h5>
               </div>
             </div>
             <div className="text">
-              <h5>{trainer.message}</h5>
             </div>
             <div className="text">
               <div className="d-flex "></div>
             </div>
             {userId === trainer._ownerId && (
               <div className="buttons">
-                <Link to={`/trainers/${trainerId}/edit`} className="button">
-                  Edit
-                </Link>
-                <button className="button" onClick={deleteButtonClickHandler}>
+                <button className="button" onClick={() => {
+                  window.location.href = `/trainers/${trainerId}/edit`;
+                }}>
                   {" "}
+                  Edit
+                </button>
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                <button className="button" onClick={deleteButtonClickHandler}>
+                  {" "} 
                   Delete
                 </button>
               </div>
@@ -100,8 +141,7 @@ export default function Details() {
               ) : null)}
 
             <div className="likes">
-              <img className="hearts" />
-              <span id="total-likes">Likes: {trainer.likes?.length || 0}</span>
+              <span id="total-likes" style={{fontSize: '22px', marginTop: '20px'}}>Likes: {trainer.likes?.length || 0} ♥️</span>
             </div>
           </div>
         </div>

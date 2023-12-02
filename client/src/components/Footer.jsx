@@ -2,8 +2,7 @@ export default function Footer() {
   return (
     <footer className="container-fluid footer_section">
       <p>
-        © 2020 All Rights Reserved. Design by
-        <a href="https://html.design/">Free Html Templates</a>
+        © 2020 All Rights Reserved. Designed and built by Georgi ALexandrov.
       </p>
     </footer>
   );

@@ -20,6 +20,11 @@
     }
 }
 
+.nav_search-btn {
+    background-position: center;
+    margin-top: 10px;
+}
+
 @media (max-width: 768px) {
     .contact_section .form_container {
         padding: 45px 0;
