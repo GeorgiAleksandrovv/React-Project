@@ -25,7 +25,7 @@ export default function AddTrainer() {
         <div className="row">
           <div className="col-md-6 px-0">
             <div className="img-box">
-              <img src="images/contact-img.jpg" alt="" />
+              <img src="images/t2.jpg" alt="" />
             </div>
           </div>
           <div className="col-lg-5 col-md-6">
