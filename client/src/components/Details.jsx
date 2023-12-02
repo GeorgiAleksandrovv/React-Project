@@ -75,7 +75,7 @@ export default function Details() {
           </div>
           {userId === trainer._ownerId && (
             <div className="buttons">
-              <Link to={`/trainers/:trainerId/edit`} className="button">
+              <Link to={`/trainers/${trainerId}/edit`} className="button">
                 Edit
               </Link>
               <button className="button" onClick={deleteButtonClickHandler}>
@@ -84,17 +84,17 @@ export default function Details() {
               </button>
             </div>
           )}
-          <button>
-            {email._id &&
-              (email._id !== trainer._ownerId ? (
-                <button
-                  onClick={likeButtonClick}
-                  disabled={trainer.likes?.includes(email._id)}
-                >
-                  Like
-                </button>
-              ) : null)}
-          </button>
+
+          {email._id &&
+            (email._id !== trainer._ownerId ? (
+              <button
+                onClick={likeButtonClick}
+                disabled={trainer.likes?.includes(email._id)}
+              >
+                Like
+              </button>
+            ) : null)}
+
           <div className="likes">
             <img className="hearts" />
             <span id="total-likes">Likes: {trainer.likes?.length || 0}</span>
