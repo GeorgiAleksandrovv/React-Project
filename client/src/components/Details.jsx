@@ -49,58 +49,63 @@ export default function Details() {
   };
 
   return (
-    <div className="row">
-      <div className="col-lg-4 col-md-6 mx-auto">
-        <div className="box">
-          <div className="name">
-            <h5>{trainer.name}</h5>
-          </div>
-          <div className="number">
-            <h5>{trainer.height}</h5>
-          </div>
-          <div className="number">
-            <h5>{trainer.weight}</h5>
-          </div>
-          <div className="text">
-            <h5>{trainer.message}</h5>
-          </div>
-          <div className="img-box">
-            <img src={trainer.ImageUrl} alt="" />
+    <section className="trainer_section layout_padding">
+      <div className="row">
+        <div className="col-lg-4 col-md-6 mx-auto">
+          <div className="box">
+            <div className="name">
+              Name:
+              <h5>{trainer.name}</h5>
+            </div>
             <div className="number">
-              <h5>{trainer.Phone}</h5>
+              Height:
+              <h5>{trainer.height}</h5>
             </div>
-          </div>
-          <div className="text">
-            <div className="d-flex "></div>
-          </div>
-          {userId === trainer._ownerId && (
-            <div className="buttons">
-              <Link to={`/trainers/${trainerId}/edit`} className="button">
-                Edit
-              </Link>
-              <button className="button" onClick={deleteButtonClickHandler}>
-                {" "}
-                Delete
-              </button>
+            <div className="number">
+              Weight:
+              <h5>{trainer.weight}</h5>
             </div>
-          )}
+            <div className="img-box">
+              <img src={trainer.ImageUrl} alt="" />
+              <div className="number">
+                <h5>{trainer.Phone}</h5>
+              </div>
+            </div>
+            <div className="text">
+              <h5>{trainer.message}</h5>
+            </div>
+            <div className="text">
+              <div className="d-flex "></div>
+            </div>
+            {userId === trainer._ownerId && (
+              <div className="buttons">
+                <Link to={`/trainers/${trainerId}/edit`} className="button">
+                  Edit
+                </Link>
+                <button className="button" onClick={deleteButtonClickHandler}>
+                  {" "}
+                  Delete
+                </button>
+              </div>
+            )}
 
-          {userId &&
-            (userId !== trainer._ownerId ? (
-              <button
-                onClick={likeButtonClick}
-                disabled={trainer.likes?.includes(userId)}
-              >
-                Like
-              </button>
-            ) : null)}
+            {userId &&
+              (userId !== trainer._ownerId ? (
+                <button
+                  onClick={likeButtonClick}
+                  disabled={trainer.likes?.includes(userId)}
+                >
+                  Like
+                </button>
+              ) : null)}
 
-          <div className="likes">
-            <img className="hearts" />
-            <span id="total-likes">Likes: {trainer.likes?.length || 0}</span>
+            <div className="likes">
+              <img className="hearts" />
+              <span id="total-likes">Likes: {trainer.likes?.length || 0}</span>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

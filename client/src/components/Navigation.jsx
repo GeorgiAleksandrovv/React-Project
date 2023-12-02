@@ -12,7 +12,7 @@ export default function Navigation() {
         <div className="container-fluid">
           <nav className="navbar navbar-expand-lg custom_nav-container ">
             <Link className="navbar-brand" to="/">
-              <span>Neogym</span>
+              <span>JoroFit</span>
             </Link>
             <button
               className="navbar-toggler"
@@ -91,6 +91,12 @@ export default function Navigation() {
                 </ul>
                 <div className="user_option">
                   <form className="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">
+                    <input
+                      type="text"
+                      className="search-name"
+                      name="name"
+                      placeholder="Search Trainer..."
+                    />
                     <button
                       className="btn  my-2 my-sm-0 nav_search-btn"
                       type="submit"

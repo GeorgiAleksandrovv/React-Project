@@ -2,8 +2,10 @@ import * as request from "../lib/request";
 
 const baseUrl = "http://localhost:3030/data/trainers";
 
-export const getAll = async () => {
-  const result = await request.get(baseUrl);
+export const getAll = async (name = "") => {
+  const result = await request.get(
+    `${baseUrl}?where=${encodeURIComponent(`name like "${name}"`)}`
+  );
 
   return result;
 };
