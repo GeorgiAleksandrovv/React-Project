@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import GoogleMaps from "./GoogleMaps";
 
 export default function ContactUs() {
   const navigate = useNavigate();
@@ -18,7 +19,7 @@ export default function ContactUs() {
         <div className="row">
           <div className="col-md-6 px-0">
             <div className="img-box">
-              <img src="images/contact-img.jpg" alt="" />
+              <GoogleMaps />
             </div>
           </div>
           <div className="col-lg-5 col-md-6">

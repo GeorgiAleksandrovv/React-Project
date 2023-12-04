@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import GoogleMaps from "./GoogleMaps";
 
 export default function Info() {
   const navigate = useNavigate();
@@ -15,7 +16,7 @@ export default function Info() {
         <div className="info_items">
           <a href="">
             <div className="item ">
-              <div className="img-box box-1">
+              <div onClick={handleSendClick} className="img-box box-1">
                 <img src="" alt="" />
               </div>
               <div className="detail-box">
