@@ -32,7 +32,6 @@ export default function TrainerUpdate() {
 
       navigate("/trainers");
     } catch (err) {
-      // Error notification
       console.log(err);
     }
   };
@@ -50,7 +49,7 @@ export default function TrainerUpdate() {
         <div className="row">
           <div className="col-md-6 px-0">
             <div className="img-box">
-              <img src="images/contact-img.jpg" alt="" />
+              <img src="images/t2.jpg" alt="" />
             </div>
           </div>
           <div className="col-lg-5 col-md-6">
@@ -122,7 +121,7 @@ export default function TrainerUpdate() {
                 </div>
                 <div className="d-flex ">
                   <button
-                    classname="btn submit"
+                    className="btn submit"
                     type="submit"
                     value="editTrainer"
                   >

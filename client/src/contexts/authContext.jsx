@@ -25,6 +25,10 @@ export const AuthProvider = ({ children }) => {
   };
 
   const registerSubmitHandler = async (values) => {
+    if (values.password !== values["confirm-password"]) {
+      throw new Error("Passwords don't match");
+    }
+    
     const result = await authService.register(values.email, values.password);
 
     setAuth(result);

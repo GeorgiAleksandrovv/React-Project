@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import GoogleMaps from "./GoogleMaps";
 
 export default function Info() {
   const navigate = useNavigate();

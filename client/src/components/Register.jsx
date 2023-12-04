@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   MDBBtn,
   MDBContainer,
@@ -21,12 +21,22 @@ const RegisterFormKeys = {
 
 export default function Register() {
   const { registerSubmitHandler } = useContext(AuthContext);
-  const { values, onChange, onSubmit } = useForm(registerSubmitHandler, {
+  const [errorMessage, setErrorMessage] = useState("");
+  const { values, onChange, onSubmit } = useForm(handleSubmit, {
     [RegisterFormKeys.Email]: "",
     [RegisterFormKeys.Password]: "",
     [RegisterFormKeys.ConfirmPassword]: "",
     [RegisterFormKeys.Username]: "",
   });
+
+  async function handleSubmit() {
+    try {
+      setErrorMessage("");
+      await registerSubmitHandler(values);
+    } catch (error) {
+      setErrorMessage(error.message);
+    }
+  }
 
   return (
     <MDBContainer
@@ -92,6 +102,7 @@ export default function Register() {
             >
               Register
             </MDBBtn>
+            {errorMessage && <p className="text-danger mb-3">{errorMessage}</p>}
           </form>
         </MDBCardBody>
       </MDBCard>
