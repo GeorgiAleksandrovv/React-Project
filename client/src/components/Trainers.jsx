@@ -27,7 +27,15 @@ export default function Trainers() {
           <h2>Our Gym Trainers</h2>
           <br />
         </div>
-        <div className="user_option" style={{marginTop: '30px', display: 'flex', justifyContent: "center", alignItems: 'center'}}>
+        <div
+          className="user_option"
+          style={{
+            marginTop: "30px",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
           <input
             type="text"
             className="search-name"
@@ -38,9 +46,11 @@ export default function Trainers() {
           />
           <button
             className="btn  my-2 my-sm-0 nav_search-btn"
-            style={{backgroundColor: '#aaaaaa'}}
+            style={{ backgroundColor: "#aaaaaa" }}
             onClick={getTrainers}
-          >&#128269;</button>
+          >
+            &#128269;
+          </button>
         </div>
 
         {trainers.map((trainer) => (

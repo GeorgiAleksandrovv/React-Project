@@ -13,7 +13,7 @@ import Register from "./components/Register";
 import AddTrainer from "./components/AddTrainer";
 import { AuthProvider } from "./contexts/authContext";
 import Details from "./components/Details";
-import TrainerUpdate from "./components/trainerUpdate";
+import TrainerUpdate from "./components/TrainerUpdate";
 import Logout from "./components/logout";
 import AuthGuard from "./components/AuthGuard";
 import ErrorBoundary from "./components/ErrorBoundary";
